@@ -5,8 +5,6 @@ const HASH_SIZE = 64;
 const ITERATIONS = 100000;
 const SESSION_TOKEN_SIZE = 32;
 
-const SECRET_KEY = process.env.SECRET_KEY;
-
 export const generateSalt = () => crypto.randomBytes(SALT_SIZE).toString('base64');
 
 export const hashPassword = (salt: string, password: string) => {

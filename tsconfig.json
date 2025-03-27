@@ -1,11 +1,16 @@
 {
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "nodenext",
+    "moduleDetection": "force",
+    "module": "Preserve",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "noImplicitAny" : true,
+    "sourceMap" : true,
     "baseUrl" : "src",
     "outDir" : "dist",
-    "sourceMap" : true,
-    "noImplicitAny" : true
   },
   "include" : ["src/**/*"]
 }

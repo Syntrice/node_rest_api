@@ -32,8 +32,6 @@ server.listen(8080, () => {
 
 const DB_CONNECTION_STRING = process.env.DB_CONNECTION_STRING;
 
-console.log(`DB_CONNECTION_STRING: ${DB_CONNECTION_STRING}`);
-
 // Construct a promise for mongoose to connect to the database
 mongoose.Promise = global.Promise;
 mongoose.connect(DB_CONNECTION_STRING);

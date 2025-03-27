@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "watch": "tsx watch --include './src/**/*' --env-file=.env ./src/index.ts"
+    "watch": "tsx watch --include './src/**/*' --env-file=.env ./src/index.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",

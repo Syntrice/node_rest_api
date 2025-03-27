@@ -39,8 +39,8 @@ export const register = async (req: express.Request, res: express.Response) => {
                 salt,
             },
         });
-        
-        return res.status(200).json(user).end();
+        res.status(200).json(user).send();
+        return 
 
     } catch (error) {
         console.log(error);

@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import compression from "compression";
 import cors from "cors";
 import mongoose, { mongo } from "mongoose";
+import router from "router";
 
 // Setup the application. Works very much like asp.net
 
@@ -37,3 +38,6 @@ console.log(`DB_CONNECTION_STRING: ${DB_CONNECTION_STRING}`);
 mongoose.Promise = global.Promise;
 mongoose.connect(DB_CONNECTION_STRING);
 mongoose.connection.on("error", (err: Error) => console.error(err));
+
+// use the router middleware on the root path
+app.use('/', router())

@@ -23,6 +23,10 @@ export const getUserByEmail = (email: string) => {
     return UserModel.findOne({email: email});
 }
 
+export const getUserByUsername = (username: string) => {
+    return UserModel.findOne({username: username});
+}
+
 export const getUserBySessionToken = (sessionToken: string) => {
     return UserModel.findOne({"authentication.sessionToken": sessionToken});
 }

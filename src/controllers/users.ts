@@ -1,5 +1,5 @@
 import express from "express";
-import { deleteUserById, getUsers } from "database/users";
+import { deleteUserById, getUserById, getUsers } from "database/users";
 
 export const getAllUsers = async (
     req: express.Request,
@@ -33,3 +33,26 @@ export const deleteUser = async (
         res.status(500).send()
     }
 };
+
+export const updateUser = async (req: express.Request, res: express.Response) => {
+    try {
+
+        const { id } = req.params
+        const { username } = req.body
+
+        if (!username) {
+            res.status(400).send()
+        }
+
+        const user = await getUserById(id);
+
+        user.username = username;
+        await user.save();
+
+        res.status(200).json(user).send()
+
+    } catch(error) {
+        console.log(error)
+        res.status(500).send()
+    }
+}

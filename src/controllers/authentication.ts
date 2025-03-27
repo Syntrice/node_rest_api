@@ -93,9 +93,8 @@ export const login = async (req: express.Request, res: express.Response) => {
             httpOnly: true,
         })
             .status(200)
-            .json(user)
             .send();
-            
+
     } catch (error) {
         console.log(error);
         res.status(500).send();
